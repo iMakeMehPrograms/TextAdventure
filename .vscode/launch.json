@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - game",
+            "request": "launch",
+            "mainClass": "TextAdventure.game",
+            "projectName": "TextAdventure_d56baa57"
+        },
+        {
+            "type": "java",
+            "name": "Normal Run",
+            "request": "launch",
+            "mainClass": "game"
+        },
+        {
+            "type": "java",
+            "name": "Play TextAdventure",
+            "request": "launch",
+            "mainClass": "game",
+            "projectName": "TextAdventure_d56baa57"
+        }
+    ]
+}

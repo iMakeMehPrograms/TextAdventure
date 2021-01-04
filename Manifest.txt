@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Created-By: Erik Rainey for Kellan Rainey
+Main-Class: TextAdventure.game
+Name: TextAdventure
+Specification-Title: Text Adventure Game
+Specification-Version: 1.0
+Specification-Vendor: Kellan Rainey
+Implementation-Title: TextAdventure.game
+Implementation-Version: firstbuild
+Implementation-Vendor: Kellan Rainey
+Sealed: true
