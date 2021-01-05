@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Created-By: Erik Rainey for Kellan Rainey
+Created-By: Kellan Rainey
 Main-Class: TextAdventure.game
 Name: TextAdventure
 Specification-Title: Text Adventure Game

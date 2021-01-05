@@ -9,10 +9,14 @@ private static boolean debugModeUnlocked = false;
 public static boolean view = false;
     //public game () {} not this
 
-    static enemy radputer = new enemy("rad\'puter", 3, 0.33, enemy.enemyASCII[0], "wormtamer");
-    static enemy twiglet = new enemy("twiglet", 1, 0.25, enemy.enemyASCII[1], "twig");
-    static enemy branchlet = new enemy("branchlet", 2, 0.33, enemy.enemyASCII[2], "branch");
-    static enemy tree = new enemy("rad\'puter", 3, 0.33, enemy.enemyASCII[3], "TREE");
+    static enemy radputer = new enemy("rad\'puter", 3, 0.33, enemy.enemyASCII[0], "Hard Drill#");
+    static enemy sandworm = new enemy("sandworm", 4, 0.44, enemy.enemyASCII[1], "Wormtamer#");
+    static enemy boombox = new enemy("boombox", 4, 0.50, enemy.enemyASCII[2], "Bomb Casing#");
+    static enemy tetrimino = new enemy("l tetrimino", 6, 0.60, enemy.enemyASCII[3], "L Block#");
+    static enemy twiglet = new enemy("twiglet", 1, 0.25, enemy.enemyASCII[4], "twig#");
+    static enemy branchlet = new enemy("branchlet", 2, 0.33, enemy.enemyASCII[5], "Wood Shield#");
+    static enemy tree = new enemy("tree.", 3, 0.33, enemy.enemyASCII[6], "Perseus's Sword (of Dirt)#");
+    static enemy metalkiller = new enemy("Metal Killer", 5, 0.50, enemy.enemyASCII[7], "Plasmasword Ver 3.0#");
 
     public static void run(int debugLevel) {
         if (debugLevel == 1) {
@@ -131,7 +135,6 @@ public static boolean view = false;
         run(mode);
         break;
         }
-        System.out.println(player.traits);
         if (player.traits.get(1).equals("male")) {
             System.out.println("Next, " + player.traits.get(0) + ", son of [UNKNOWN]. Now, select a hair color.");
         } else {
@@ -285,9 +288,10 @@ public static boolean view = false;
                 room.win();
                 break;
                 case "lose":
+                room.lose();
                 break;
                 case "asciiview":
-                enemy.printArt(radputer);
+                enemy.printArt(metalkiller);
                 break;
             }
         } else {

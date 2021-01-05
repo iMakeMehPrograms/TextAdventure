@@ -48,11 +48,14 @@ public class room {
                 break;
                 case "2":
                     System.out.println("STATS:");
-                    System.out.println("Monsters Killed: " + player.monstersKilled + "/1");
-                    System.out.println("Rooms Visited: " + player.roomsVisited + "/3");
-                    System.out.println("Items Unlocked: " + items.itemsPickedUp + "/6");
+                    System.out.println("Monsters Killed: " + player.monstersKilled + "/" + enemy.totalMonsters);
+                    System.out.println("Rooms Visited: " + player.roomsVisited + "/" + roomNumbering.length);
+                    System.out.println("Items Unlocked: " + items.itemsPickedUp + "/" + items.totalItems);
                     System.out.println("Hard Mode On (\'80s Mode): " + game.eightiesMode);
-                    System.out.println("Completion Rate: ");
+                    int done = (player.roomsVisited + items.itemsPickedUp + player.monstersKilled);
+                    int total = (roomNumbering.length + enemy.totalMonsters + items.totalItems + 1);
+                    double percent = (100.0*done)/total;
+                    System.out.println("Completion Rate: " + percent + "%");
                     System.out.print("Press anything to go back: ");
                     option = keyboard.nextLine();
                     System.out.println("");
@@ -96,11 +99,14 @@ public class room {
                     break;
                 case "2":
                     System.out.println("TUBULAR STATS:");
-                    System.out.println("Monsters Gagged with Spoons: " + player.monstersKilled + "/1");
-                    System.out.println("Rooms Blizted: " + player.roomsVisited + "/3");
-                    System.out.println("Items Bogarted: " + items.itemsPickedUp + "/6");
+                    System.out.println("Monsters Gagged with Spoons: " + player.monstersKilled + "/" + enemy.totalMonsters);
+                    System.out.println("Rooms Blizted: " + player.roomsVisited + "/" + roomNumbering.length);
+                    System.out.println("Items Bogarted: " + items.itemsPickedUp + "/" + items.totalItems);
                     System.out.println("Hard Mode On (\'80s Mode): " + game.eightiesMode);
-                    System.out.println("Hotdogger Rate: ");
+                    int done = (player.roomsVisited + items.itemsPickedUp + player.monstersKilled + 1);
+                    int total = (roomNumbering.length + enemy.totalMonsters + items.totalItems + 1);
+                    double percent = (100.0 * done) / total;
+                    System.out.println("Hotdogger Rate: " + percent + "%");
                     System.out.print("Press anything to go back: ");
                     option = keyboard.nextLine();
                     System.out.println("");
