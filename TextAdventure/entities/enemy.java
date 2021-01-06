@@ -31,8 +31,7 @@ public class enemy extends entity {
   };
 
   public static int monstersFought = 0;
-  public static final String[] enemyChances = {"1/3", /* '80s > Normal */ "1/4"}; // same order as ASCII art
-  public static void monsterfight(int element) {
+  public static void monsterfight() {
     
   }
 }

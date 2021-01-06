@@ -46,7 +46,7 @@ public static boolean view = false;
         switch (option) {
         case "1":
         System.out.println("Starting Game!");
-        System.out.println("WARNING: If you do not press a number that is not one of the options and enter it, the game will reset. This is everywhere and is a thing I cannot fix.");
+        System.out.println("WARNING: If you do not press a number that is not one of the options and enter it, the game will reset to the nearest possible point (Data will still be saved).");
         System.out.println("You have been warned. (0 is always an anwser, but this will quit the game anyways)");
         PDS(false);
         break;
@@ -248,9 +248,6 @@ public static boolean view = false;
 
 
     public static void startGame (boolean isEighties, boolean isDebug) {
-        player.traits.add(""); // move count of rooms
-        player.traits.add(""); // monsters killed
-        player.traits.add("");
         Scanner keyboard = new Scanner(System.in);
         String option = "null";
         if (isEighties == true) {
@@ -259,6 +256,8 @@ public static boolean view = false;
             System.out.println("_  __  |  / / /_  ___/   __  __ `__ \\  __ \\  __  /_  _ \\    _  __ `/  ___/  __/_  /__ | / /  __ `/  __/  _ \\  __  / ");
             System.out.println("/ /_/ // /_/ /_(__  )    _  / / / / / /_/ / /_/ / /  __/    / /_/ // /__ / /_ _  / __ |/ // /_/ // /_ /  __/ /_/ / ");
             System.out.println("\\____/ \\____/ /____/     /_/ /_/ /_/\\____/\\__,_/  \\___/     \\__,_/ \\___/ \\__/ /_/  _____/ \\__,_/ \\__/ \\___/\\__,_/");
+            System.out.println("");
+            System.out.println("You wake up in a bland room yo. You think, \"Rad! I'm in an adventure game! Hope I won't get gagged with a spoon!\"");
             while (!gameEnded) {
                option = keyboard.nextLine();
                if (option.equals("0")) {
@@ -266,6 +265,8 @@ public static boolean view = false;
                }
             }
         } else {
+            System.out.println("");
+            System.out.println("You wake up in dull grey room. What has befallen of you? You may never know, but your instinct tells you to escape.");
             while (!gameEnded) {
                 option = keyboard.nextLine();
                 if (option.equals("0")) {
@@ -292,6 +293,11 @@ public static boolean view = false;
                 break;
                 case "asciiview":
                 enemy.printArt(metalkiller);
+                break;
+                case "test":
+                for (int a : room.findMoveOptions(2)) {
+                    System.out.println(a);
+                }
                 break;
             }
         } else {

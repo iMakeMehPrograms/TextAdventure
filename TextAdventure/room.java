@@ -8,14 +8,6 @@ public class room {
     static String[] doors = {"0:1", "1:2"};
     static String roomState = "start";
     static int currentRoom = 1;
-    static String[][] roomText = {
-            // for monsterfight you can use the name of the monster or use ran for a random
-            // one
-            { "monsterfight/twiglet/{rad'puter}" }, // for rad'puter make it say things like "Three planets" and "The
-                                                    // spice must flow," maybe also "Lets play a game." or "Welcome
-                                                    // Professor Falken"
-            { "dooroptions", "investigate" }, { "win" } /* row 1 */
-    };
 
     public static void win() {
         if (game.eightiesMode == false) {
@@ -205,34 +197,35 @@ public class room {
         switch(roomType[newRoom]) {
             // This is done from most likely to least likely.
             case "M":
-            enemy.monsterfight(newRoom);
+            enemy.monsterfight();
             break;
             case "N":
-            FADRI(roomText[newRoom]);
+            findAndDisplayRoomInformation(findMoveOptions(currentRoom));
             break;
             case "P":
-            FADRI(roomText[newRoom]);
+            findAndDisplayRoomInformation(findMoveOptions(currentRoom));
             break;
             case "G":
             win();
             break;
         }
     };
-     public static ArrayList<Integer> FMO(int currentRoom) {
+     public static ArrayList<Integer> findMoveOptions(int currentRoom) {
         final ArrayList<Integer> options = new ArrayList<Integer>();
-        for (int i = 1; i < doors.length; i++) {
-            if (doors[i].indexOf(currentRoom) != -1) {
-               switch (doors[i].indexOf(currentRoom)) {
+        for (int i = 0; i < doors.length; i++) {
+            if (doors[i].indexOf(Integer.toString(currentRoom)) > -1) {
+               switch (doors[i].indexOf(Integer.toString(currentRoom))) {
                    case 0:
-                   options.add(doors[i].indexOf(2));
+                   options.add(Integer.parseInt(Character.toString(doors[i].charAt(2))));
                    break;
                    case 2:
-                   options.add(doors[i].indexOf(0));
+                   options.add(Integer.parseInt(Character.toString(doors[i].charAt(0))));
                    break;
                    default:
                    throw new IllegalArgumentException("String[] doors is not meant to have syntax " + doors[i]);
                } 
-            } else if (doors[i].indexOf(currentRoom) == -1) {
+            } else if (doors[i].indexOf(Integer.toString(currentRoom)) == -1) {
+                System.out.println("cheese");
             } else {
                 throw new IllegalArgumentException("String[] doors is not meant to have syntax " + doors[i]);
             }
@@ -240,7 +233,8 @@ public class room {
         return options;
     }
 
-    public static void FADRI(String[] options) {
+    public static void findAndDisplayRoomInformation(ArrayList<Integer> moveOptions) {
+
     }
     
 }
