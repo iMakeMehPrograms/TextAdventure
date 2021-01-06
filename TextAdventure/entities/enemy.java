@@ -1,4 +1,5 @@
 package TextAdventure.entities;
+import TextAdventure.*;
 public class enemy extends entity {
 
   String[] asciiArt;
@@ -14,7 +15,7 @@ public class enemy extends entity {
     }
   }
 
-  public static int totalMonsters = 1;
+  public static int totalMonsters = room.findTypeCount("M");
 
   public static final String[][] enemyASCII = { 
       {"_________", "| '80s  |", "|_______|", " /_____\\ " }, // rad'puter

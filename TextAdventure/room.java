@@ -190,7 +190,7 @@ public class room {
     }
     }
 
-    public int findTypeCount(String type) {
+    public static int findTypeCount(String type) {
     int count = 0;
     for (String roomtype : roomType) {
       if (type.equals(roomtype)) {
