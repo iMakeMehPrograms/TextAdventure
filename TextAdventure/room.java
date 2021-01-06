@@ -4,7 +4,7 @@ import TextAdventure.entities.*
 ;
 public class room {
     static int[] roomNumbering = {0, 1, 2};
-    static String[] roomType = {"M", "P", "G"};
+    static public String[] roomType = {"M", "P", "G"};
     static String[] doors = {"0:1", "1:2"};
     static String roomState = "start";
     static int currentRoom = 1;
@@ -16,9 +16,6 @@ public class room {
                                                     // Professor Falken"
             { "dooroptions", "investigate" }, { "win" } /* row 1 */
     };
-
-    public static void FADRI(String[] options) {
-    }
 
     public static void win() {
         if (game.eightiesMode == false) {
@@ -193,6 +190,16 @@ public class room {
     }
     }
 
+    public int findTypeCount(String type) {
+    int count = 0;
+    for (String roomtype : roomType) {
+      if (type.equals(roomtype)) {
+        count++;
+      }
+    }
+    return count;
+  }
+
     public static void move(int newRoom) {
         currentRoom = newRoom;
         switch(roomType[newRoom]) {
@@ -211,7 +218,7 @@ public class room {
             break;
         }
     };
-     /*public static ArrayList<Integer> FMO(int currentRoom) {
+     public static ArrayList<Integer> FMO(int currentRoom) {
         final ArrayList<Integer> options = new ArrayList<Integer>();
         for (int i = 1; i < doors.length; i++) {
             if (doors[i].indexOf(currentRoom) != -1) {
@@ -223,14 +230,17 @@ public class room {
                    options.add(doors[i].indexOf(0));
                    break;
                    default:
-                   throw new IllegalArgumentException("String[] door is not meant to have syntax " + doors[i]);
+                   throw new IllegalArgumentException("String[] doors is not meant to have syntax " + doors[i]);
                } 
             } else if (doors[i].indexOf(currentRoom) == -1) {
             } else {
-                throw new IllegalArgumentException("String[] door is not meant to have syntax " + doors[i]);
+                throw new IllegalArgumentException("String[] doors is not meant to have syntax " + doors[i]);
             }
         }
         return options;
-    }*/
+    }
+
+    public static void FADRI(String[] options) {
+    }
     
 }
