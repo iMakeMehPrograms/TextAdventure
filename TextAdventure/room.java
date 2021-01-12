@@ -200,7 +200,7 @@ public class room {
         switch(roomType[newRoom]) {
             // This is done from most likely to least likely.
             case "M":
-            enemy.monsterfight();
+            enemy.monsterfight(game.radputer);
             break;
             case "N":
             findAndDisplayRoomInformationAndOtherEssentialThingsThatAreImportantToTheGameLikeMakingTheInterfaceOfTheGameAndIKnowThisNameIsRidiculislyLongButIDontCareAnywaysWhatWasThisAboutOhWaitMethodNamesCanbeThisLongWowIDidntKnowThatManIShouldReallyStopWritingThisButWhateverWhoCaresThisIsFunAndStuffSoWhatShouldISayNowIDontKnowHmmMaybeThatThisNameIsToLongBeRightBackOkImBackNowIShouldContinueWritingThisNameBecauseItsFunAndImGettingBoredButThisNameHasToBeLongerSoIllKeepWritingThisNameManThisNameIsSoLongItsFunnyNowOkIllStopInAMinuteAt1220OkIts1220GotToGoBye(findMoveOptions(currentRoom));
@@ -229,7 +229,6 @@ public class room {
                    throw new IllegalArgumentException("String[] doors is not meant to have syntax " + doors[i]);
                } 
             } else if (doors[i].indexOf(Integer.toString(currentRoom)) == -1) {
-                System.out.println("cheese");
             } else {
                 throw new IllegalArgumentException("String[] doors is not meant to have syntax " + doors[i]);
             }

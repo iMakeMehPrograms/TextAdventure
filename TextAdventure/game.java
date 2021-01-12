@@ -9,14 +9,14 @@ private static boolean debugModeUnlocked = false;
 public static boolean view = false;
     //public game () {} not this
 
-    static enemy radputer = new enemy("rad\'puter", 3, 0.33, enemy.enemyASCII[0], "Hard Drill#");
-    static enemy sandworm = new enemy("sandworm", 4, 0.44, enemy.enemyASCII[1], "Wormtamer#");
-    static enemy boombox = new enemy("boombox", 4, 0.50, enemy.enemyASCII[2], "Bomb Casing#");
-    static enemy tetrimino = new enemy("l tetrimino", 6, 0.60, enemy.enemyASCII[3], "L Block#");
-    static enemy twiglet = new enemy("twiglet", 1, 0.25, enemy.enemyASCII[4], "twig#");
-    static enemy branchlet = new enemy("branchlet", 2, 0.33, enemy.enemyASCII[5], "Wood Shield#");
-    static enemy tree = new enemy("tree.", 3, 0.33, enemy.enemyASCII[6], "Perseus's Sword (of Dirt)#");
-    static enemy metalkiller = new enemy("Metal Killer", 5, 0.50, enemy.enemyASCII[7], "Plasmasword Ver 3.0#");
+    static enemy radputer = new enemy("RAD\'PUTER", 3, 0.33, enemy.enemyASCII[0], "Hard Drill#");
+    static enemy sandworm = new enemy("SANDWORM", 4, 0.44, enemy.enemyASCII[1], "Wormtamer#");
+    static enemy boombox = new enemy("BOOMBOX", 4, 0.50, enemy.enemyASCII[2], "Bomb Casing#");
+    static enemy tetrimino = new enemy("L TETRIMINO", 6, 0.60, enemy.enemyASCII[3], "L Block#");
+    static enemy twiglet = new enemy("TWIGLET", 1, 0.25, enemy.enemyASCII[4], "twig#");
+    static enemy branchlet = new enemy("BRANCHLET", 2, 0.33, enemy.enemyASCII[5], "Wood Shield#");
+    static enemy tree = new enemy("TREE.", 3, 0.33, enemy.enemyASCII[6], "Perseus's Sword (of Dirt)#");
+    static enemy metalkiller = new enemy("METALKILLER", 5, 0.50, enemy.enemyASCII[7], "Plasmasword Ver 3.0#");
 
     public static void run(int debugLevel) {
         if (debugLevel == 1) {
@@ -301,6 +301,9 @@ public static boolean view = false;
                 break;
                 case "testmove":
                 room.move(2);
+                break;
+                case "fight":
+                enemy.monsterfight(tree);
                 break;
             }
         } else {
