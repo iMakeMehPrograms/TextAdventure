@@ -294,10 +294,13 @@ public static boolean view = false;
                 case "asciiview":
                 enemy.printArt(metalkiller);
                 break;
-                case "test":
-                for (int a : room.findMoveOptions(2)) {
+                case "testmoveoptions":
+                for (int a : room.findMoveOptions(room.currentRoom)) {
                     System.out.println(a);
                 }
+                break;
+                case "testmove":
+                room.move(2);
                 break;
             }
         } else {

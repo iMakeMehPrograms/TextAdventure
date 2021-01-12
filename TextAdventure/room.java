@@ -193,6 +193,9 @@ public class room {
   }
 
     public static void move(int newRoom) {
+        if (newRoom == currentRoom) {
+            throw new IllegalArgumentException("You cannot move into a room you are already in!");
+        }
         currentRoom = newRoom;
         switch(roomType[newRoom]) {
             // This is done from most likely to least likely.
@@ -200,14 +203,15 @@ public class room {
             enemy.monsterfight();
             break;
             case "N":
-            findAndDisplayRoomInformation(findMoveOptions(currentRoom));
+            findAndDisplayRoomInformationAndOtherEssentialThingsThatAreImportantToTheGameLikeMakingTheInterfaceOfTheGameAndIKnowThisNameIsRidiculislyLongButIDontCareAnywaysWhatWasThisAboutOhWaitMethodNamesCanbeThisLongWowIDidntKnowThatManIShouldReallyStopWritingThisButWhateverWhoCaresThisIsFunAndStuffSoWhatShouldISayNowIDontKnowHmmMaybeThatThisNameIsToLongBeRightBackOkImBackNowIShouldContinueWritingThisNameBecauseItsFunAndImGettingBoredButThisNameHasToBeLongerSoIllKeepWritingThisNameManThisNameIsSoLongItsFunnyNowOkIllStopInAMinuteAt1220OkIts1220GotToGoBye(findMoveOptions(currentRoom));
             break;
             case "P":
-            findAndDisplayRoomInformation(findMoveOptions(currentRoom));
+            findAndDisplayRoomInformationAndOtherEssentialThingsThatAreImportantToTheGameLikeMakingTheInterfaceOfTheGameAndIKnowThisNameIsRidiculislyLongButIDontCareAnywaysWhatWasThisAboutOhWaitMethodNamesCanbeThisLongWowIDidntKnowThatManIShouldReallyStopWritingThisButWhateverWhoCaresThisIsFunAndStuffSoWhatShouldISayNowIDontKnowHmmMaybeThatThisNameIsToLongBeRightBackOkImBackNowIShouldContinueWritingThisNameBecauseItsFunAndImGettingBoredButThisNameHasToBeLongerSoIllKeepWritingThisNameManThisNameIsSoLongItsFunnyNowOkIllStopInAMinuteAt1220OkIts1220GotToGoBye(findMoveOptions(currentRoom));
             break;
             case "G":
             win();
             break;
+            // add case "C" here
         }
     };
      public static ArrayList<Integer> findMoveOptions(int currentRoom) {
@@ -233,7 +237,7 @@ public class room {
         return options;
     }
 
-    public static void findAndDisplayRoomInformation(ArrayList<Integer> moveOptions) {
+    public static void findAndDisplayRoomInformationAndOtherEssentialThingsThatAreImportantToTheGameLikeMakingTheInterfaceOfTheGameAndIKnowThisNameIsRidiculislyLongButIDontCareAnywaysWhatWasThisAboutOhWaitMethodNamesCanbeThisLongWowIDidntKnowThatManIShouldReallyStopWritingThisButWhateverWhoCaresThisIsFunAndStuffSoWhatShouldISayNowIDontKnowHmmMaybeThatThisNameIsToLongBeRightBackOkImBackNowIShouldContinueWritingThisNameBecauseItsFunAndImGettingBoredButThisNameHasToBeLongerSoIllKeepWritingThisNameManThisNameIsSoLongItsFunnyNowOkIllStopInAMinuteAt1220OkIts1220GotToGoBye(ArrayList<Integer> moveOptions) {
 
     }
     
