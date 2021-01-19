@@ -4,10 +4,10 @@ import TextAdventure.entities.*
 ;
 public class room {
     static int[] roomNumbering = {0, 1, 2};
-    static public String[] roomType = {"M", "P", "G"};
+    public static public String[] roomType = {"M", "P", "G"};
     static String[] doors = {"0:1", "1:2"};
     static String roomState = "start";
-    static int currentRoom = 1;
+    public static int currentRoom = 1;
 
     public static void win() {
         if (game.eightiesMode == false) {
@@ -203,10 +203,10 @@ public class room {
             enemy.monsterfight(game.radputer);
             break;
             case "N":
-            findAndDisplayRoomInformationAndOtherEssentialThingsThatAreImportantToTheGameLikeMakingTheInterfaceOfTheGameAndIKnowThisNameIsRidiculislyLongButIDontCareAnywaysWhatWasThisAboutOhWaitMethodNamesCanbeThisLongWowIDidntKnowThatManIShouldReallyStopWritingThisButWhateverWhoCaresThisIsFunAndStuffSoWhatShouldISayNowIDontKnowHmmMaybeThatThisNameIsToLongBeRightBackOkImBackNowIShouldContinueWritingThisNameBecauseItsFunAndImGettingBoredButThisNameHasToBeLongerSoIllKeepWritingThisNameManThisNameIsSoLongItsFunnyNowOkIllStopInAMinuteAt1220OkIts1220GotToGoBye(findMoveOptions(currentRoom));
+            findAndDisplayRoomInformation(findMoveOptions(newRoom));
             break;
             case "P":
-            findAndDisplayRoomInformationAndOtherEssentialThingsThatAreImportantToTheGameLikeMakingTheInterfaceOfTheGameAndIKnowThisNameIsRidiculislyLongButIDontCareAnywaysWhatWasThisAboutOhWaitMethodNamesCanbeThisLongWowIDidntKnowThatManIShouldReallyStopWritingThisButWhateverWhoCaresThisIsFunAndStuffSoWhatShouldISayNowIDontKnowHmmMaybeThatThisNameIsToLongBeRightBackOkImBackNowIShouldContinueWritingThisNameBecauseItsFunAndImGettingBoredButThisNameHasToBeLongerSoIllKeepWritingThisNameManThisNameIsSoLongItsFunnyNowOkIllStopInAMinuteAt1220OkIts1220GotToGoBye(findMoveOptions(currentRoom));
+            findAndDisplayRoomInformation(findMoveOptions(newRoom));
             break;
             case "G":
             win();
@@ -236,8 +236,28 @@ public class room {
         return options;
     }
 
-    public static void findAndDisplayRoomInformationAndOtherEssentialThingsThatAreImportantToTheGameLikeMakingTheInterfaceOfTheGameAndIKnowThisNameIsRidiculislyLongButIDontCareAnywaysWhatWasThisAboutOhWaitMethodNamesCanbeThisLongWowIDidntKnowThatManIShouldReallyStopWritingThisButWhateverWhoCaresThisIsFunAndStuffSoWhatShouldISayNowIDontKnowHmmMaybeThatThisNameIsToLongBeRightBackOkImBackNowIShouldContinueWritingThisNameBecauseItsFunAndImGettingBoredButThisNameHasToBeLongerSoIllKeepWritingThisNameManThisNameIsSoLongItsFunnyNowOkIllStopInAMinuteAt1220OkIts1220GotToGoBye(ArrayList<Integer> moveOptions) {
-
+    public static void findAndDisplayRoomInformation(ArrayList<Integer> moveOptions) {
+        Scanner keyboard = new Scanner(System.in);
+        int aord = 0;
+        for (int idx = 0; idx < moveOptions.size(); idx++) {
+            aord = idx + 1;
+            System.out.println("[" + aord + "]: Move to room " + moveOptions.get(idx) + ".");
+        }
+        System.out.println("["+ (aord+1) + "]: Investigate the room.");
+        System.out.print("What do you do: ");
+        String answer = keyboard.nextLine();
+        int bord = 0;
+        boolean canInvestigate = true;
+        for (int idx = 0; idx < moveOptions.size(); idx++)   {
+            if (answer.equals(Integer.toString(idx+1))) {
+                move(moveOptions.get(idx));
+                canInvestigate = false;
+            }
+            bord = idx+1;
+        }
+        if (answer.equals(Integer.toString(bord)) && canInvestigate) {
+            // investigate
+            System.out.println("cheese curd");
+        }
     }
-    
 }

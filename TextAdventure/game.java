@@ -34,7 +34,7 @@ public static boolean view = false;
         System.out.println("");
         System.out.println("[1]: Start Game");
         System.out.println("[2]: How to Play");
-        System.out.println("[3]: Cheat Mode");
+        System.out.println("[3]: Extras");
         System.out.println("[0]: Quit");
         System.out.println("");
 
@@ -69,13 +69,7 @@ public static boolean view = false;
         break;
         case "3":
         if (debugModeUnlocked) {
-        System.out.println("Starting Cheat Mode!");
-        System.out.println("WARNING: If you do not press a number that is not one of the options and enter it, the game will reset. This is everywhere and is a thing I cannot fix.");
-        System.out.println("You have been warned. (0 is always an anwser, but this will quit the game anyways)");
-        PDS(true);
-        } else {
-            System.out.println("I'm sorry, but you have to get a 100% first.");
-            run(debugLevel);
+        // add extras here
         }
         break;
         case "0":
@@ -248,8 +242,6 @@ public static boolean view = false;
 
 
     public static void startGame (boolean isEighties, boolean isDebug) {
-        Scanner keyboard = new Scanner(System.in);
-        String option = "null";
         if (isEighties == true) {
             System.out.println("______________                            _________                      __________              _____     _________");
             System.out.println("__( __ )_  __ \\_______   _______ _______________  /____     ______ ________  /___(_)__   _______ __  /___________  /");
@@ -259,19 +251,13 @@ public static boolean view = false;
             System.out.println("");
             System.out.println("You wake up in a bland room yo. You think, \"Rad! I'm in an adventure game! Hope I won't get gagged with a spoon!\"");
             while (!gameEnded) {
-               option = keyboard.nextLine();
-               if (option.equals("0")) {
-                   System.exit(1);
+                room.findAndDisplayRoomInformation(room.findMoveOptions(room.currentRoom));
                }
-            }
         } else {
             System.out.println("");
             System.out.println("You wake up in dull grey room. What has befallen of you? You may never know, but your instinct tells you to escape.");
             while (!gameEnded) {
-                option = keyboard.nextLine();
-                if (option.equals("0")) {
-                    System.exit(1);
-                }
+                room.findAndDisplayRoomInformation(room.findMoveOptions(room.currentRoom)); 
             }
         }
     }
@@ -304,6 +290,9 @@ public static boolean view = false;
                 break;
                 case "fight":
                 enemy.monsterfight(tetrimino);
+                break;
+                case "testdisplay":
+                room.findAndDisplayRoomInformation(room.findMoveOptions(room.currentRoom));
                 break;
             }
         } else {

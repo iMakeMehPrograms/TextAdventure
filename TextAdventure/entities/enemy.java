@@ -61,11 +61,11 @@ public class enemy extends entity {
       System.out.println(obj.enemyName + " missed you! Rad!");
     }
     Scanner keyboard = new Scanner(System.in);
-        System.out.println("<||||||||||||||||||||||||||||||||>");
+        System.out.println("||||||||||||||||||||||||||||||||||");
         System.out.println("You are on " + player.hp + " HP yo!");
         System.out.println("[1]: Attack");
         System.out.println("[2]: Block");
-        System.out.println("<||||||||||||||||||||||||||||||||>");
+        System.out.println("||||||||||||||||||||||||||||||||||");
         System.out.print("Which one yo: ");
         String answer = keyboard.nextLine();
       if (answer.equals("1")) {
@@ -76,6 +76,8 @@ public class enemy extends entity {
         if (obj.health <= 0) {
           System.out.println("You killed the " + obj.enemyName + "! +0 XP!");
           enemyDead = true;
+          room.roomType[room.currentRoom] = "N";
+          player.hp = player.hp + 1;
         }
       } else {
         System.out.println("You missed! That's un-rad yo!");
@@ -123,6 +125,8 @@ public class enemy extends entity {
         if (obj.health <= 0) {
           System.out.println("You killed the " + obj.enemyName + "! +0 XP!");
           enemyDead = true;
+          room.roomType[room.currentRoom] = "N";
+          player.hp = player.hp + 2;
         }
       } else {
         System.out.println("You missed!");
