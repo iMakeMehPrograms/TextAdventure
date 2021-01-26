@@ -1,13 +1,15 @@
 package TextAdventure;
 import java.util.*;
-import TextAdventure.entities.*
-;
+import TextAdventure.entities.*;
+import TextAdventure.items;
 public class room {
-    static int[] roomNumbering = {0, 1, 2};
-    public static public String[] roomType = {"M", "P", "G"};
-    static String[] doors = {"0:1", "1:2"};
+    static int[] roomNumbering = {0, 1, 2,
+                                  3, 4, 5};
+    public static String[] roomType = {"N", "N", "N", 
+                                       "P", "M", "G"};
+    static String[] doors = {"0:1", "1:2", "0:3", "1:4", "2:5"};
     static String roomState = "start";
-    public static int currentRoom = 1;
+    public static int currentRoom = 3;
 
     public static void win() {
         if (game.eightiesMode == false) {
@@ -33,6 +35,7 @@ public class room {
                 player.traits.clear();
                 player.roomsVisited = 0;
                 player.monstersKilled = 0;
+                currentRoom = 3;
                 game.run(0);
                 break;
                 case "2":
@@ -84,6 +87,7 @@ public class room {
                     player.roomsVisited = 0;
                     player.monstersKilled = 0;
                     game.eightiesMode = false;
+                    currentRoom = 3;
                     game.run(0);
                     break;
                 case "2":
@@ -139,6 +143,7 @@ public class room {
             player.traits.clear();
             player.roomsVisited = 0;
             player.monstersKilled = 0;
+            currentRoom = 3;
             game.run(0);
             break;
             case "0":
@@ -169,6 +174,7 @@ public class room {
             player.roomsVisited = 0;
             player.monstersKilled = 0;
             game.eightiesMode = false;
+            currentRoom = 3;
             game.run(0);
             break;
             case "0":
@@ -211,7 +217,9 @@ public class room {
             case "G":
             win();
             break;
-            // add case "C" here
+            case "C":
+            break;
+            
         }
     };
      public static ArrayList<Integer> findMoveOptions(int currentRoom) {
@@ -244,6 +252,7 @@ public class room {
             System.out.println("[" + aord + "]: Move to room " + moveOptions.get(idx) + ".");
         }
         System.out.println("["+ (aord+1) + "]: Investigate the room.");
+        System.out.println("["+ (aord+2) + "]: Check inventory.");
         System.out.print("What do you do: ");
         String answer = keyboard.nextLine();
         int bord = 0;
@@ -253,11 +262,22 @@ public class room {
                 move(moveOptions.get(idx));
                 canInvestigate = false;
             }
-            bord = idx+1;
+            bord = idx+2;
         }
-        if (answer.equals(Integer.toString(bord)) && canInvestigate) {
-            // investigate
-            System.out.println("cheese curd");
+        if (answer.equals(Integer.toString(bord))) {
+            items.investigate();
+        } else if (answer.equals(Integer.toString(bord+1)) && canInvestigate) {
+            String inventoryItems = "You have in your inventory: ";
+            boolean ran = false;
+            for (int p = 0; p < player.inventory.size(); p++) {
+                inventoryItems.concat(player.inventory.get(p)+" ");
+                ran = true;
+            }
+            if (ran) {
+                System.out.println(inventoryItems);
+            } else {
+                System.out.println("You don't have anything in your inventory.");
+            }
         }
     }
 }

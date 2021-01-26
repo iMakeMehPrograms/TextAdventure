@@ -6,13 +6,15 @@ public class enemy extends entity {
   String[] asciiArt;
   String enemyName;
   double chance;
-  int health;
+  double health;
+  items itemDrop;
 
-  public enemy(String name, int hp, double hitChance, String[] art, String drop) {
+  public enemy(String name, double hp, double hitChance, String[] art, items drop) {
     asciiArt = art;
     enemyName = name;
     chance = hitChance;
     health = hp;
+    itemDrop = drop;
   }
 
   static public void printArt(enemy obj) {
@@ -71,11 +73,12 @@ public class enemy extends entity {
       if (answer.equals("1")) {
       chance = Math.random();
       if (chance < player.chanceToHit) {
-        obj.health = obj.health - 1;
+        obj.health = obj.health - player.atck;
         System.out.println("You whacked it! -1 HP for the " + obj.enemyName);
         if (obj.health <= 0) {
           System.out.println("You killed the " + obj.enemyName + "! +0 XP!");
           enemyDead = true;
+          player.inventory.add(obj.itemDrop);
           room.roomType[room.currentRoom] = "N";
           player.hp = player.hp + 1;
         }
@@ -120,11 +123,12 @@ public class enemy extends entity {
       if (answer.equals("1")) {
       chance = Math.random();
       if (chance < player.chanceToHit) {
-        obj.health = obj.health - 1;
+        obj.health = obj.health - player.atck;
         System.out.println("You whacked it! -1 HP for the " + obj.enemyName);
         if (obj.health <= 0) {
           System.out.println("You killed the " + obj.enemyName + "! +0 XP!");
           enemyDead = true;
+          player.inventory.add(obj.itemDrop);
           room.roomType[room.currentRoom] = "N";
           player.hp = player.hp + 2;
         }

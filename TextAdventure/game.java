@@ -9,14 +9,14 @@ private static boolean debugModeUnlocked = false;
 public static boolean view = false;
     //public game () {} not this
 
-    static enemy radputer = new enemy("RAD\'PUTER", 3, 0.33, enemy.enemyASCII[0], "Hard Drill#");
-    static enemy sandworm = new enemy("SANDWORM", 4, 0.44, enemy.enemyASCII[1], "Wormtamer#");
-    static enemy boombox = new enemy("BOOMBOX", 4, 0.50, enemy.enemyASCII[2], "Bomb Casing#"); // bomb casing is a shield
-    static enemy tetrimino = new enemy("L TETRIMINO", 6, 0.60, enemy.enemyASCII[3], "L Block#"); // this is a sword
-    static enemy twiglet = new enemy("TWIGLET", 1, 0.25, enemy.enemyASCII[4], "twig#");
-    static enemy branchlet = new enemy("BRANCHLET", 2, 0.33, enemy.enemyASCII[5], "Wood Shield#");
-    static enemy tree = new enemy("TREE.", 4, 0.36, enemy.enemyASCII[6], "Perseus's Sword (of Dirt)#");
-    static enemy metalkiller = new enemy("METALKILLER", 5, 0.50, enemy.enemyASCII[7], "Plasmasword Ver 3.0#");
+    static enemy radputer = new enemy("RAD\'PUTER", 3, 0.33, enemy.enemyASCII[0], items.hd);
+    static enemy sandworm = new enemy("SANDWORM", 4, 0.44, enemy.enemyASCII[1], items.wmt);
+    static enemy boombox = new enemy("BOOMBOX", 4, 0.50, enemy.enemyASCII[2], items.bc); // bomb casing is a shield
+    static enemy tetrimino = new enemy("L TETRIMINO", 6, 0.60, enemy.enemyASCII[3], items.lb); // this is a sword
+    static enemy twiglet = new enemy("TWIGLET", 1, 0.25, enemy.enemyASCII[4], items.tw);
+    static enemy branchlet = new enemy("BRANCHLET", 2, 0.33, enemy.enemyASCII[5], items.ws);
+    static enemy tree = new enemy("TREE.", 4, 0.36, enemy.enemyASCII[6], items.pd);
+    static enemy metalkiller = new enemy("METALKILLER", 5, 0.50, enemy.enemyASCII[7], items.ps);
 
     public static void run(int debugLevel) {
         if (debugLevel == 1) {

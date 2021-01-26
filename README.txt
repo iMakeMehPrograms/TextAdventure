@@ -53,7 +53,11 @@
   +---+---+---+
   Functions:
   Equipment
-  Investigate (Find items or traps)
+  - Must edit stats.
+  - Must have 8 in total.
+  Investigate (Find items or traps) #
+  (for one of investigate items, add map of normalness that shows all normal rooms.)
+  Add Extras in menu
 
   Phase 3:
 
@@ -63,10 +67,10 @@
   +-:-+-:-+-:-+
   | C : N | M |
   +---+-:-+-:-+
-  | M : C : M |
+  | M : C : N |
   +---+---+---+ 
   Functions:
-  Add Extras in menu
+  Make mon and add map and key
 
   Phase 4:
 
