@@ -267,17 +267,10 @@ public class room {
         if (answer.equals(Integer.toString(bord))) {
             items.investigate();
         } else if (answer.equals(Integer.toString(bord+1)) && canInvestigate) {
-            String inventoryItems = "You have in your inventory: ";
-            boolean ran = false;
-            for (int p = 0; p < player.inventory.size(); p++) {
-                inventoryItems.concat(player.inventory.get(p)+" ");
-                ran = true;
-            }
-            if (ran) {
-                System.out.println(inventoryItems);
+            // add inventory check here
+            items.checkInventory();
             } else {
                 System.out.println("You don't have anything in your inventory.");
             }
         }
     }
-}

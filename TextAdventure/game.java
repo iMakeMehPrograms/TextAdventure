@@ -294,6 +294,12 @@ public static boolean view = false;
                 case "testdisplay":
                 room.findAndDisplayRoomInformation(room.findMoveOptions(room.currentRoom));
                 break;
+                case "inventorycheck":
+                player.inventory.add(items.wt);
+                player.inventory.add(items.wmt);
+                player.inventory.add(items.bc);
+                items.checkInventory();
+                break;
             }
         } else {
             run(0);

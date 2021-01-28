@@ -1,9 +1,10 @@
 package TextAdventure.entities;
 import java.util.*;
+import TextAdventure.items;
 public class player extends entity {
 
     public static ArrayList<String> traits = new ArrayList<String>();
-    public static ArrayList<Object> inventory = new ArrayList<Object>();
+    public static ArrayList<items> inventory = new ArrayList<items>();
     public static int roomsVisited = 0;
     public static int monstersKilled = 0;
     public static double hp = 3; // Hit Points (deduce one at a time if not blocking, half if blocking)

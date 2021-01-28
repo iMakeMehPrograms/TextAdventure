@@ -58,4 +58,30 @@ public class items {
         }
     }
 
+    public static void checkInventory() {
+        if (!game.eightiesMode) {
+            if (player.inventory.size() <= 0) {
+                System.out.println("You don't have anything in your inventory!");
+            } else {
+                String message = "In your inventory you have: ";
+                for (int i = 0; i < player.inventory.size(); i++) {
+                    items obj = player.inventory.get(i);
+                    message = message.concat("a " +obj.name+", ");
+                }
+                System.out.println(message+ "and that's it!");
+            }
+        } else {
+            if (player.inventory.size() <= 0) {
+                System.out.println("You don't have anything in your rad inventory yo!");
+            } else {
+                String message = "In your bodacious inventory you have: ";
+                for (int i = 0; i < player.inventory.size(); i++) {
+                    items obj = player.inventory.get(i);
+                    message = message.concat("a "+obj.name+", ");
+                }
+                System.out.println(message+ "and that's it!");
+            }
+        }
+    }
+
 }
