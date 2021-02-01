@@ -53,8 +53,11 @@
   +---+---+---+
   Functions:
   Equipment
-  - Must edit stats.
-  - Must have 8 in total.
+  - Must edit stats. #
+  - Must have 8 in total. #
+  - checkinventory #
+  - correctinventory
+  - changestats #
   Investigate (Find items or traps) #
   (for one of investigate items, add map of normalness that shows all normal rooms.)
   Add Extras in menu
@@ -70,7 +73,7 @@
   | M : C : N |
   +---+---+---+ 
   Functions:
-  Make mon and add map and key
+  None
 
   Phase 4:
 

@@ -300,6 +300,22 @@ public static boolean view = false;
                 player.inventory.add(items.bc);
                 items.checkInventory();
                 break;
+                case "correctinventory":
+                player.inventory.add(items.wt);
+                player.inventory.add(items.wt);
+                player.inventory.add(items.wmt);
+                player.inventory.add(items.bc);
+                player.inventory.add(items.wt);
+                items.correctInventory();
+                break;
+                case "changestats":
+                player.inventory.add(items.wt);
+                player.inventory.add(items.wmt);
+                player.inventory.add(items.bc);
+                items.changeStats();
+                System.out.println(player.df);
+                System.out.println(player.atck);
+                break;
             }
         } else {
             run(0);

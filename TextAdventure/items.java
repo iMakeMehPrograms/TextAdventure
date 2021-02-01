@@ -32,8 +32,12 @@ public class items {
     public static void investigate() {
         double rand = Math.random();
         if (rand > 0.8) {
-            player.inventory.add(wt);
-            System.out.println("You got a weirdthing!");
+            player.hp = player.hp - 1;
+            player.inventory.add(br);
+            System.out.println("You found a trap! -1 HP!");
+            if (player.hp <= 0) {
+                room.lose();
+            }
         } else if (rand < 0.8 && rand > 0.2) {
             player.inventory.add(map);
             System.out.println("You got a Map of Normalness!");
@@ -49,11 +53,8 @@ public class items {
                     room.lose();
                 }
             } else {
-                player.hp = player.hp - 1.8;
-                System.out.println("You found a trap! -1.8 HP!");
-                if (player.hp <= 0) {
-                    room.lose();
-                }
+                player.inventory.add(wt);
+                System.out.println("You got a Weirdthing!");
             }
         }
     }
@@ -83,5 +84,36 @@ public class items {
             }
         }
     }
-
+    public static void correctInventory() {
+        for (int i = 0; i < player.inventory.size(); i++) {
+            items obj = player.inventory.get(i);
+            System.out.println(obj.name);
+            for (int o = i; o < player.inventory.size(); o++) {
+                if (player.inventory.get(o) == obj) {
+                    player.inventory.remove(o);
+                    System.out.println(player.inventory.get(o).name + " was deleted at position " + o);
+                }
+            }
+        }
+        checkInventory();
+    }
+    public static void changeStats() {
+        for (int i = 0; i < player.inventory.size(); i++) {
+            items obj = player.inventory.get(i);
+            switch (obj.type) {
+                case "atk":
+                player.atck = player.atck + obj.stat;
+                break;
+                case "df":
+                player.df = player.df + obj.stat;
+                break;
+                case "map":
+                room.monOn = true;
+                break;
+                case "jn":
+                // Does nothing
+                break;
+            }
+        }
+    }
 }

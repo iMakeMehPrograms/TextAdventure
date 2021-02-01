@@ -1,7 +1,6 @@
 package TextAdventure;
 import java.util.*;
 import TextAdventure.entities.*;
-import TextAdventure.items;
 public class room {
     static int[] roomNumbering = {0, 1, 2,
                                   3, 4, 5};
@@ -10,6 +9,7 @@ public class room {
     static String[] doors = {"0:1", "1:2", "0:3", "1:4", "2:5"};
     static String roomState = "start";
     public static int currentRoom = 3;
+    public static boolean monOn = false;
 
     public static void win() {
         if (game.eightiesMode == false) {
@@ -223,6 +223,27 @@ public class room {
         }
     };
      public static ArrayList<Integer> findMoveOptions(int currentRoom) {
+
+        if (monOn) {
+            System.out.println("");
+            System.out.println("+---+---+---+");
+            System.out.println("|0N :1N :2N |");
+            System.out.println("+-:-+-:-+-:-+");
+            System.out.println("| 3 | 4 | 5 |");
+            System.out.println("+---+---+---+");
+            System.out.println("");
+            System.out.println("N = a normal room.");
+            System.out.println("");
+        } else {
+            System.out.println("");
+            System.out.println("+---+---+---+");
+            System.out.println("| 0 : 1 : 2 |");
+            System.out.println("+-:-+-:-+-:-+");
+            System.out.println("| 3 | 4 | 5 |");
+            System.out.println("+---+---+---+");
+            System.out.println("");
+        }
+
         final ArrayList<Integer> options = new ArrayList<Integer>();
         for (int i = 0; i < doors.length; i++) {
             if (doors[i].indexOf(Integer.toString(currentRoom)) > -1) {
