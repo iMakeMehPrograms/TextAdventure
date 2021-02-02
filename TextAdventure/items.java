@@ -1,5 +1,6 @@
 package TextAdventure;
 import TextAdventure.entities.*;
+import java.util.*;
 public class items {
 
     String type;
@@ -84,18 +85,27 @@ public class items {
             }
         }
     }
-    public static void correctInventory() {
-        for (int i = 0; i < player.inventory.size(); i++) {
-            items obj = player.inventory.get(i);
-            System.out.println(obj.name);
-            for (int o = i; o < player.inventory.size(); o++) {
-                if (player.inventory.get(o) == obj) {
-                    player.inventory.remove(o);
-                    System.out.println(player.inventory.get(o).name + " was deleted at position " + o);
-                }
-            }
-        }
-        checkInventory();
+    public static ArrayList<items> correctInventory(ArrayList<items> list) {
+  // from https://www.geeksforgeeks.org/how-to-remove-duplicates-from-arraylist-in-java/ , slightly modified
+  // Function to remove duplicates from an ArrayList
+  
+
+    // Create a new LinkedHashSet
+    Set<items> set = new LinkedHashSet<>();
+
+    // Add the elements to set
+    set.addAll(list);
+
+    // Clear the list
+    list.clear();
+
+    // add the elements of set
+    // with no duplicates to the list
+    list.addAll(set);
+
+    // return the list
+    return list;
+
     }
     public static void changeStats() {
         for (int i = 0; i < player.inventory.size(); i++) {

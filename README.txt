@@ -56,11 +56,11 @@
   - Must edit stats. #
   - Must have 8 in total. #
   - checkinventory #
-  - correctinventory
+  - correctinventory #
   - changestats #
   Investigate (Find items or traps) #
-  (for one of investigate items, add map of normalness that shows all normal rooms.)
-  Add Extras in menu
+  (for one of investigate items, add map of normalness that shows all normal rooms.) #
+  Add Extras in menu #
 
   Phase 3:
 
@@ -73,7 +73,7 @@
   | M : C : N |
   +---+---+---+ 
   Functions:
-  None
+  Add monsters per room
 
   Phase 4:
 

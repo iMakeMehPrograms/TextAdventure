@@ -3,9 +3,11 @@ import java.util.*;
 import TextAdventure.entities.*;
 public class room {
     static int[] roomNumbering = {0, 1, 2,
-                                  3, 4, 5};
-    public static String[] roomType = {"N", "N", "N", 
-                                       "P", "M", "G"};
+                                  3, 4, 5,
+                                  6, 7, 8};
+    public static String[] roomType = {"M", "P", "G",
+                                       "C", "N", "M",
+                                       "M", "C", ""};
     static String[] doors = {"0:1", "1:2", "0:3", "1:4", "2:5"};
     static String roomState = "start";
     public static int currentRoom = 3;
@@ -218,6 +220,7 @@ public class room {
             win();
             break;
             case "C":
+            items.investigate();
             break;
             
         }
@@ -227,9 +230,11 @@ public class room {
         if (monOn) {
             System.out.println("");
             System.out.println("+---+---+---+");
-            System.out.println("|0N :1N :2N |");
+            System.out.println("| 0 : 1 | 2 |");
             System.out.println("+-:-+-:-+-:-+");
-            System.out.println("| 3 | 4 | 5 |");
+            System.out.println("| 3 :4N | 5 |");
+            System.out.println("+---+-:-+-:-+");
+            System.out.println("| 6 : 7 :8N |");
             System.out.println("+---+---+---+");
             System.out.println("");
             System.out.println("N = a normal room.");
@@ -237,10 +242,12 @@ public class room {
         } else {
             System.out.println("");
             System.out.println("+---+---+---+");
-            System.out.println("| 0 : 1 : 2 |");
+            System.out.println("| 0 : 1 | 2 |");
             System.out.println("+-:-+-:-+-:-+");
             System.out.println("| 3 | 4 | 5 |");
-            System.out.println("+---+---+---+");
+            System.out.println("+---+-:-+-:-+");
+            System.out.println("| 6 : 7 : 8 |");
+            System.out.println("+---+---+---+ ");
             System.out.println("");
         }
 

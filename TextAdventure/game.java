@@ -5,7 +5,6 @@ public class game {
 public static int mode = 0;
 public static boolean eightiesMode = false;
 public static boolean gameEnded = false;
-private static boolean debugModeUnlocked = false;
 public static boolean view = false;
     //public game () {} not this
 
@@ -19,9 +18,6 @@ public static boolean view = false;
     static enemy metalkiller = new enemy("METALKILLER", 5, 0.50, enemy.enemyASCII[7], items.ps);
 
     public static void run(int debugLevel) {
-        if (debugLevel == 1) {
-            debugModeUnlocked = true;
-        }
         mode = debugLevel;
         Scanner keyboard = new Scanner(System.in);
         System.out.println(" _____  ________  _ _____  ____  ____  _     _____ _      _____  _     ____  _____");
@@ -68,9 +64,9 @@ public static boolean view = false;
         }
         break;
         case "3":
-        if (debugModeUnlocked) {
-        // add extras here
-        }
+        System.out.println("");
+        System.out.println(" gg ez ");
+        System.out.println("");
         break;
         case "0":
         System.out.println("Quiting");
@@ -306,7 +302,9 @@ public static boolean view = false;
                 player.inventory.add(items.wmt);
                 player.inventory.add(items.bc);
                 player.inventory.add(items.wt);
-                items.correctInventory();
+                items.checkInventory();
+                items.correctInventory(player.inventory);
+                items.checkInventory();
                 break;
                 case "changestats":
                 player.inventory.add(items.wt);

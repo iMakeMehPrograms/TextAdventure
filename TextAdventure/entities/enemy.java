@@ -79,6 +79,7 @@ public class enemy extends entity {
           System.out.println("You killed the " + obj.enemyName + "! +0 XP!");
           enemyDead = true;
           player.inventory.add(obj.itemDrop);
+          items.correctInventory(player.inventory);
           room.roomType[room.currentRoom] = "N";
           player.hp = player.hp + 1;
         }
@@ -129,6 +130,7 @@ public class enemy extends entity {
           System.out.println("You killed the " + obj.enemyName + "! +0 XP!");
           enemyDead = true;
           player.inventory.add(obj.itemDrop);
+          items.correctInventory(player.inventory);
           room.roomType[room.currentRoom] = "N";
           player.hp = player.hp + 2;
         }
