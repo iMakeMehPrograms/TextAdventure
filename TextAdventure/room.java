@@ -6,11 +6,11 @@ public class room {
                                   3, 4, 5,
                                   6, 7, 8};
     public static String[] roomType = {"M", "P", "G",
-                                       "C", "N", "M",
-                                       "M", "C", ""};
-    static String[] doors = {"0:1", "1:2", "0:3", "1:4", "2:5"};
+                                       "C", "M", "M",
+                                       "M", "C", "N"};
+    static String[] doors = {"0:1", "1:4", "0:3", "4:7", "7:6", "7:8", "8:5", "5:2"};
     static String roomState = "start";
-    public static int currentRoom = 3;
+    public static int currentRoom = 1;
     public static boolean monOn = false;
 
     public static void win() {
@@ -208,7 +208,37 @@ public class room {
         switch(roomType[newRoom]) {
             // This is done from most likely to least likely.
             case "M":
-            enemy.monsterfight(game.radputer);
+            if (!game.eightiesMode) {
+                switch (currentRoom) {
+                case 0:
+                enemy.monsterfight(game.twiglet);
+                break;
+                case 4:
+                enemy.monsterfight(game.branchlet);
+                break;
+                case 5:
+                enemy.monsterfight(game.tree);
+                break;
+                case 6:
+                enemy.monsterfight(game.metalkiller);
+                break;
+                }
+            } else {
+                switch (currentRoom) {
+                    case 0:
+                    enemy.monsterfight(game.radputer);
+                    break;
+                    case 4:
+                    enemy.monsterfight(game.sandworm);
+                    break;
+                    case 5:
+                    enemy.monsterfight(game.boombox);
+                    break;
+                    case 6:
+                    enemy.monsterfight(game.tetrimino);
+                    break;
+                }
+            }
             break;
             case "N":
             findAndDisplayRoomInformation(findMoveOptions(newRoom));

@@ -31,6 +31,7 @@ public class items {
     
     // put all equipment in here
     public static void investigate() {
+        player.inventory = correctInventory(player.inventory);
         double rand = Math.random();
         if (rand > 0.8) {
             player.hp = player.hp - 1;
@@ -58,9 +59,12 @@ public class items {
                 System.out.println("You got a Weirdthing!");
             }
         }
+        player.inventory = correctInventory(player.inventory);
     }
 
     public static void checkInventory() {
+        player.inventory = correctInventory(player.inventory);
+        changeStats();
         if (!game.eightiesMode) {
             if (player.inventory.size() <= 0) {
                 System.out.println("You don't have anything in your inventory!");
@@ -108,14 +112,16 @@ public class items {
 
     }
     public static void changeStats() {
+        double atk = 1;
+        double df = 0;
         for (int i = 0; i < player.inventory.size(); i++) {
             items obj = player.inventory.get(i);
             switch (obj.type) {
                 case "atk":
-                player.atck = player.atck + obj.stat;
+                atk = atk + obj.stat;
                 break;
                 case "df":
-                player.df = player.df + obj.stat;
+                df = df + obj.stat;
                 break;
                 case "map":
                 room.monOn = true;
@@ -125,5 +131,7 @@ public class items {
                 break;
             }
         }
+        player.atck = atk;
+        player.df = df;
     }
 }

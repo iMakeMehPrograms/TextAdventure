@@ -80,6 +80,7 @@ public class enemy extends entity {
           enemyDead = true;
           player.inventory.add(obj.itemDrop);
           items.correctInventory(player.inventory);
+          items.changeStats();
           room.roomType[room.currentRoom] = "N";
           player.hp = player.hp + 1;
         }
@@ -131,6 +132,7 @@ public class enemy extends entity {
           enemyDead = true;
           player.inventory.add(obj.itemDrop);
           items.correctInventory(player.inventory);
+          items.changeStats();
           room.roomType[room.currentRoom] = "N";
           player.hp = player.hp + 2;
         }

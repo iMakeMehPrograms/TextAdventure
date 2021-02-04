@@ -68,12 +68,13 @@
   +---+---+---+
   | M : P | G |
   +-:-+-:-+-:-+
-  | C : N | M |
+  | C : M | M |
   +---+-:-+-:-+
   | M : C : N |
   +---+---+---+ 
   Functions:
-  Add monsters per room
+  Add monsters per room #
+  testplay & fixes
 
   Phase 4:
 
