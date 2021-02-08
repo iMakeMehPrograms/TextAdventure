@@ -12,8 +12,37 @@ public class room {
     static String roomState = "start";
     public static int currentRoom = 1;
     public static boolean monOn = false;
+    public static ArrayList<Integer> roomsGoneTo = new ArrayList<Integer>();
+
+    public static ArrayList<Integer> roomsVisitedDuplicateDeleter(ArrayList<Integer> list) {
+        // from
+        // https://www.geeksforgeeks.org/how-to-remove-duplicates-from-arraylist-in-java/
+        // slightly modified
+        // Function to remove duplicates from an ArrayList
+
+        // Create a new LinkedHashSet
+        Set<Integer> set = new LinkedHashSet<>();
+
+        // Add the elements to set
+        set.addAll(list);
+
+        // Clear the list
+        list.clear();
+
+        // add the elements of set
+        // with no duplicates to the list
+        list.addAll(set);
+
+        // return the list
+        return list;
+
+    }
 
     public static void win() {
+        player.inventory = items.correctInventory(player.inventory);
+        roomsGoneTo = roomsVisitedDuplicateDeleter(roomsGoneTo);
+        items.itemsPickedUp = player.inventory.size();
+        player.roomsVisited = roomsGoneTo.size();
         if (game.eightiesMode == false) {
             Scanner keyboard = new Scanner(System.in);
             System.out.println("          _______                      _______  _        _ ");
@@ -252,8 +281,8 @@ public class room {
             case "C":
             items.investigate();
             break;
-            
         }
+        roomsGoneTo.add(currentRoom);
     };
      public static ArrayList<Integer> findMoveOptions(int currentRoom) {
 
@@ -262,7 +291,7 @@ public class room {
             System.out.println("+---+---+---+");
             System.out.println("| 0 : 1 | 2 |");
             System.out.println("+-:-+-:-+-:-+");
-            System.out.println("| 3 :4N | 5 |");
+            System.out.println("| 3 : 4 | 5 |");
             System.out.println("+---+-:-+-:-+");
             System.out.println("| 6 : 7 :8N |");
             System.out.println("+---+---+---+");
@@ -327,8 +356,9 @@ public class room {
         } else if (answer.equals(Integer.toString(bord+1)) && canInvestigate) {
             // add inventory check here
             items.checkInventory();
-            } else {
-                System.out.println("You don't have anything in your inventory.");
+            } else if (answer.equals("0")) {
+                System.out.println("Quiting");
+                System.exit(1);
             }
         }
     }

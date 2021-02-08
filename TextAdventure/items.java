@@ -27,7 +27,7 @@ public class items {
   static public items ps = new items("Plasmasword Version 3.0", 0.8, "atk");
 
     public static int itemsPickedUp = 0;
-    public static int totalItems = 7;
+    public static int totalItems = 8;
     
     // put all equipment in here
     public static void investigate() {

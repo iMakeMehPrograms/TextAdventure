@@ -19,6 +19,7 @@ public static boolean view = false;
 
     public static void run(int debugLevel) {
         mode = debugLevel;
+        player.traits.clear();
         Scanner keyboard = new Scanner(System.in);
         System.out.println(" _____  ________  _ _____  ____  ____  _     _____ _      _____  _     ____  _____");
         System.out.println("/__ __\\/  __/\\  \\///__ __\\/  _ \\/  _ \\/ \\ |\\/  __// \\  /|/__ __\\/ \\ /\\/  __\\/  __/");
@@ -71,6 +72,22 @@ public static boolean view = false;
         case "0":
         System.out.println("Quiting");
         System.exit(1);
+        break;
+        case "^^VV<><>BASTART":
+        double o = 111514113931545.0;
+        for (double i = 1; i < o; i++) {
+            System.out.println("KONAMICODE");
+            System.out.println("EDOCIMANOK");
+            System.out.println("KONAMICODE");
+            System.out.println("KONAMICODE");
+            System.out.println("KONAMICODE");
+            System.out.println("KONAMICODE");
+            System.out.println("KONAMICODE");
+            System.out.println("KONAMICODE");
+            System.out.println("KONAMICODE");
+            System.out.println("EDOCIMANOK");
+            System.out.println("KONAMICODE");
+        }
         break;
         default:
         System.out.println("I don't understand. Try again");

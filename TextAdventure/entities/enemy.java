@@ -79,10 +79,11 @@ public class enemy extends entity {
           System.out.println("You killed the " + obj.enemyName + "! +0 XP!");
           enemyDead = true;
           player.inventory.add(obj.itemDrop);
-          items.correctInventory(player.inventory);
+          player.inventory = items.correctInventory(player.inventory);
           items.changeStats();
           room.roomType[room.currentRoom] = "N";
           player.hp = player.hp + 1;
+          monstersFought = monstersFought + 1;
         }
       } else {
         System.out.println("You missed! That's un-rad yo!");
@@ -131,10 +132,11 @@ public class enemy extends entity {
           System.out.println("You killed the " + obj.enemyName + "! +0 XP!");
           enemyDead = true;
           player.inventory.add(obj.itemDrop);
-          items.correctInventory(player.inventory);
+          player.inventory = items.correctInventory(player.inventory);
           items.changeStats();
           room.roomType[room.currentRoom] = "N";
           player.hp = player.hp + 2;
+          monstersFought = monstersFought + 1;
         }
       } else {
         System.out.println("You missed!");
