@@ -32,7 +32,7 @@ public class enemy extends entity {
       {"[=]","[=][=][=]"}, // ltetrimino
       /* '80s > Normal */
       {"\\/\\/\\/", " @\\/@ ", " /--\\ ", " /||\\ " }, // twiglet
-      {"\\|^^|/", "|:)|", "|  |", "/--\\"}, // branchlet
+      {"\\|^^|/", " |:)|", " |  |", " /--\\"}, // branchlet
       {"\\\\/||\\//"," ||;)||"," ||  ||"," /\\/\\/\\"}, // tree
       {"    [_______]","^/==+|&`~`&|+==\\^","||  [‾/|||\\‾]  ||","\\/     | |     \\/","       ∆ ∆"} // Metal Killer
 
@@ -50,9 +50,10 @@ public class enemy extends entity {
     if (chance < (obj.chance - (player.df*0.025))) {
       if (blocking == false) {
       player.hp = player.hp - 1;
+      blocking = false;
       System.out.println(obj.enemyName + " gagged you with a spoon-ed you! -1 HP!");
       } else {
-        player.hp = player.hp - 0.5;
+        player.hp = player.hp - 0.8;
         blocking = false;
         System.out.println(obj.enemyName + " semi-gagged you with a spoon-ed you! -0.8 HP!");
       }
@@ -61,6 +62,7 @@ public class enemy extends entity {
       }
     } else {
       System.out.println(obj.enemyName + " missed you! Rad!");
+      blocking = false;
     }
     Scanner keyboard = new Scanner(System.in);
         System.out.println("||||||||||||||||||||||||||||||||||");
@@ -103,6 +105,7 @@ public class enemy extends entity {
         if (chance < (obj.chance - (player.df * 0.025))) {
           if (blocking == false) {
             player.hp = player.hp - 1;
+            blocking = false;
             System.out.println(obj.enemyName + " whacked you! -1 HP!");
           } else {
             player.hp = player.hp - 0.5;
@@ -114,6 +117,7 @@ public class enemy extends entity {
           }
         } else {
           System.out.println(obj.enemyName + " missed you!");
+          blocking = false;
         }
         Scanner keyboard = new Scanner(System.in);
         System.out.println("<-------------------------------->");

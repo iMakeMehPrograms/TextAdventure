@@ -66,6 +66,7 @@ public class room {
                 player.traits.clear();
                 player.roomsVisited = 0;
                 player.monstersKilled = 0;
+                items.itemsPickedUp = 0;
                 currentRoom = 3;
                 game.run(0);
                 break;
@@ -79,6 +80,9 @@ public class room {
                     int total = (roomNumbering.length + enemy.totalMonsters + items.totalItems + 1);
                     double percent = (100.0*done)/total;
                     System.out.println("Completion Rate: " + percent + "%");
+                    if (percent == 100) {
+                        game.extrasUnlocked = true;
+                    }
                     System.out.print("Press anything to go back: ");
                     option = keyboard.nextLine();
                     System.out.println("");
@@ -117,6 +121,7 @@ public class room {
                     player.traits.clear();
                     player.roomsVisited = 0;
                     player.monstersKilled = 0;
+                    items.itemsPickedUp = 0;
                     game.eightiesMode = false;
                     currentRoom = 3;
                     game.run(0);
@@ -131,6 +136,9 @@ public class room {
                     int total = (roomNumbering.length + enemy.totalMonsters + items.totalItems + 1);
                     double percent = (100.0 * done) / total;
                     System.out.println("Hotdogger Rate: " + percent + "%");
+                    if (percent == 100) {
+                        game.extrasUnlocked = true;
+                    }
                     System.out.print("Press anything to go back: ");
                     option = keyboard.nextLine();
                     System.out.println("");
@@ -186,7 +194,7 @@ public class room {
         }
     } else {
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("_____.___.                              __                                            .___         .__  __  .__                                                  ._.     ");
+        System.out.println(" _____.___.                              __                                            .___         .__  __  .__                                                  ._.     ");
         System.out.println("\\__  |   | ____  __ __     ____   _____/  |_     _________     ____   ____   ____   __| _/ __  _  _|__|/  |_|  |__   _____      ____________   ____   ____   ____| |     ");
         System.out.println(" /   |   |/  _ \\|  |  \\   / ___\\ /  _ \\   __\\   / ___\\__  \\   / ___\\ / ___\\_/ __ \\ / __ |  \\ \\/ \\/ /  \\   __\\  |  \\  \\__  \\    /  ___/\\____ \\ /  _ \\ /  _ \\ /    \\ |     ");
         System.out.println(" \\____   (  <_> )  |  /  / /_/  >  <_> )  |    / /_/  > __ \\_/ /_/  > /_/  >  ___// /_/ |   \\     /|  ||  | |   Y  \\  / __ \\_  \\___ \\ |  |_> >  <_> |  <_> )   |  \\|     ");
@@ -246,10 +254,10 @@ public class room {
                 enemy.monsterfight(game.branchlet);
                 break;
                 case 5:
-                enemy.monsterfight(game.tree);
+                enemy.monsterfight(game.metalkiller);
                 break;
                 case 6:
-                enemy.monsterfight(game.metalkiller);
+                enemy.monsterfight(game.tree);
                 break;
                 }
             } else {
@@ -261,10 +269,10 @@ public class room {
                     enemy.monsterfight(game.sandworm);
                     break;
                     case 5:
-                    enemy.monsterfight(game.boombox);
+                    enemy.monsterfight(game.tetrimino);
                     break;
                     case 6:
-                    enemy.monsterfight(game.tetrimino);
+                    enemy.monsterfight(game.boombox);
                     break;
                 }
             }
@@ -279,6 +287,7 @@ public class room {
             win();
             break;
             case "C":
+            System.out.println("You found a chest and opened it!");
             items.investigate();
             break;
         }
@@ -306,7 +315,7 @@ public class room {
             System.out.println("| 3 | 4 | 5 |");
             System.out.println("+---+-:-+-:-+");
             System.out.println("| 6 : 7 : 8 |");
-            System.out.println("+---+---+---+ ");
+            System.out.println("+---+---+---+");
             System.out.println("");
         }
 

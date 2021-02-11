@@ -6,6 +6,7 @@ public static int mode = 0;
 public static boolean eightiesMode = false;
 public static boolean gameEnded = false;
 public static boolean view = false;
+public static boolean extrasUnlocked = false;
     //public game () {} not this
 
     static enemy radputer = new enemy("RAD\'PUTER", 3, 0.33, enemy.enemyASCII[0], items.hd);
@@ -65,9 +66,13 @@ public static boolean view = false;
         }
         break;
         case "3":
+        if (extrasUnlocked == true) {
         System.out.println("");
         System.out.println(" gg ez ");
         System.out.println("");
+        } else {
+            System.out.println("Beat the game with a mullet and a completion rate of 100% to unlock Extras!");
+        }
         break;
         case "0":
         System.out.println("Quiting");

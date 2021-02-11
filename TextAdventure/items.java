@@ -60,6 +60,7 @@ public class items {
             }
         }
         player.inventory = correctInventory(player.inventory);
+        changeStats();
     }
 
     public static void checkInventory() {
