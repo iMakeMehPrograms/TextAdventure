@@ -67,7 +67,8 @@ public class room {
                 player.roomsVisited = 0;
                 player.monstersKilled = 0;
                 items.itemsPickedUp = 0;
-                currentRoom = 3;
+                player.inventory.clear();
+                currentRoom = 1;
                 game.run(0);
                 break;
                 case "2":
@@ -123,7 +124,8 @@ public class room {
                     player.monstersKilled = 0;
                     items.itemsPickedUp = 0;
                     game.eightiesMode = false;
-                    currentRoom = 3;
+                    player.inventory.clear();
+                    currentRoom = 1;
                     game.run(0);
                     break;
                 case "2":

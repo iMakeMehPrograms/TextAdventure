@@ -268,12 +268,14 @@ public static boolean extrasUnlocked = false;
             System.out.println("\\____/ \\____/ /____/     /_/ /_/ /_/\\____/\\__,_/  \\___/     \\__,_/ \\___/ \\__/ /_/  _____/ \\__,_/ \\__/ \\___/\\__,_/");
             System.out.println("");
             System.out.println("You wake up in a bland room yo. You think, \"Rad! I'm in an adventure game! Hope I won't get gagged with a spoon!\"");
+            System.out.println("You notice you have a tubular map burnt into your skin, aswell as a rad engraving on the wall saying \"1\"!");
             while (!gameEnded) {
                 room.findAndDisplayRoomInformation(room.findMoveOptions(room.currentRoom));
                }
         } else {
             System.out.println("");
             System.out.println("You wake up in dull grey room. What has befallen of you? You may never know, but your instinct tells you to escape.");
+            System.out.println("You notice you have a map burnt into your skin, aswell as an engraving on the wall saying \"1\".");
             while (!gameEnded) {
                 room.findAndDisplayRoomInformation(room.findMoveOptions(room.currentRoom)); 
             }
