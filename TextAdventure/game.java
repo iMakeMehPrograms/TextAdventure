@@ -39,6 +39,7 @@ public static boolean extrasUnlocked = false;
 
         System.out.print("Which would you like: ");
         String option = keyboard.nextLine();
+        keyboard.close();
         
         System.out.println();
         switch (option) {
@@ -129,6 +130,7 @@ public static boolean extrasUnlocked = false;
         System.out.println("");
         System.out.print("Which one: ");
         option = keyboard.nextLine();
+        keyboard.close();
         System.out.println("");
         
         switch (option) {
@@ -161,6 +163,7 @@ public static boolean extrasUnlocked = false;
         System.out.println("");
         System.out.print("Which one: ");
         option = keyboard.nextLine();
+        keyboard.close();
         System.out.println("");
 
         switch (option) {
@@ -189,6 +192,7 @@ public static boolean extrasUnlocked = false;
         System.out.println("");
         System.out.print("Y/N: ");
         option = keyboard.nextLine();
+        keyboard.close();
         System.out.println("");
         switch (option) {
         case "0":
@@ -237,6 +241,7 @@ public static boolean extrasUnlocked = false;
     System.out.println("");
     System.out.print("1 or 2: ");
     option = keyboard.nextLine();
+    keyboard.close();
     System.out.println("");
     switch (option) {
         case "0":

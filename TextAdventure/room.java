@@ -59,6 +59,7 @@ public class room {
             System.out.println("[0]: Quit");
             System.out.print("Which one: ");
             String option = keyboard.nextLine();
+            keyboard.close();
             System.out.println("");
             
             switch (option) {
@@ -115,6 +116,7 @@ public class room {
             System.out.println("[0]: Gag me with a spoon!");
             System.out.print("Which one yo: ");
             String option = keyboard.nextLine();
+            keyboard.close();
             System.out.println("");
 
             switch (option) {
@@ -177,6 +179,7 @@ public class room {
         System.out.println("[0]: Quit");
         System.out.print("Which one: ");
         String option = keyboard.nextLine();
+        keyboard.close();
         System.out.println("");
 
         switch (option) {
@@ -207,6 +210,7 @@ public class room {
         System.out.println("[0]: Gag me with a spoon again!");
         System.out.print("Which one yo: ");
         String option = keyboard.nextLine();
+        keyboard.close();
         System.out.println("");
 
         switch (option) {
@@ -353,6 +357,7 @@ public class room {
         System.out.println("["+ (aord+2) + "]: Check inventory.");
         System.out.print("What do you do: ");
         String answer = keyboard.nextLine();
+        keyboard.close();
         int bord = 0;
         boolean canInvestigate = true;
         for (int idx = 0; idx < moveOptions.size(); idx++)   {

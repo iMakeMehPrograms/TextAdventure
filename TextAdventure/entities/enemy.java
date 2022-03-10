@@ -72,6 +72,7 @@ public class enemy extends entity {
         System.out.println("||||||||||||||||||||||||||||||||||");
         System.out.print("Which one yo: ");
         String answer = keyboard.nextLine();
+        keyboard.close();
       if (answer.equals("1")) {
       chance = Math.random();
       if (chance < player.chanceToHit) {
@@ -127,6 +128,7 @@ public class enemy extends entity {
         System.out.println("<-------------------------------->");
         System.out.print("Which one: ");
         String answer = keyboard.nextLine();
+        keyboard.close();
       if (answer.equals("1")) {
       chance = Math.random();
       if (chance < player.chanceToHit) {
